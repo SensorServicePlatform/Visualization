@@ -149,7 +149,7 @@ sn_visualization.main = (function(){
        * if a query fails, toggle only if successful style is up
        * if a query succeeds, toggle only if failure style is up */
       window.setInterval(function(){
-        $.getJSON("http://cmu-sensor-network.herokuapp.com/get_devices/json", function(data) {
+        $.getJSON("http://einstein.sv.cmu.edu/get_devices/json", function(data) {
           var classname = $("#api-getalldevices").attr('class');
           if (classname.search("failed-api-test") !== -1) {
             $("#api-getalldevices").toggleClass("failed-api-test");
@@ -163,7 +163,7 @@ sn_visualization.main = (function(){
           }
         });
 
-        $.getJSON("http://cmu-sensor-network.herokuapp.com/get_sensor_types/firefly_v3/json", function(data) {
+        $.getJSON("http://einstein.sv.cmu.edu/get_sensor_types/firefly_v3/json", function(data) {
           var classname = $("#api-getsensortype").attr('class');
           if (classname.search("failed-api-test") !== -1) {
             $("#api-getsensortype").toggleClass("failed-api-test");
@@ -191,7 +191,7 @@ sn_visualization.main = (function(){
           }
         });
 
-        $.getJSON("http://cmu-sensor-network.herokuapp.com/sensors/10170102/1368568896000/temp/json", function(data) {
+        $.getJSON("http://einstein.sv.cmu.edu/sensors/10170102/1368568896000/temp/json", function(data) {
           var classname = $("#api-getsensorreadingsattime").attr('class');
           if (classname.search("failed-api-test") !== -1) {
             $("#api-getsensorreadingsattime").toggleClass("failed-api-test");
@@ -205,7 +205,7 @@ sn_visualization.main = (function(){
           }
         });
 
-        $.getJSON("http://cmu-sensor-network.herokuapp.com/sensors/10170102/1368568896000/1368568996000/temp/json", function(data) {
+        $.getJSON("http://einstein.sv.cmu.edu/sensors/10170102/1368568896000/1368568996000/temp/json", function(data) {
           var classname = $("#api-getsensorreadingstimerange").attr('class');
           if (classname.search("failed-api-test") !== -1) {
             $("#api-getsensorreadingstimerange").toggleClass("failed-api-test");
@@ -219,7 +219,7 @@ sn_visualization.main = (function(){
           }
         });
 
-        $.getJSON("http://cmu-sensor-network.herokuapp.com/last_readings_from_all_devices/1368568896000/temp/json", function(data) {
+        $.getJSON("http://einstein.sv.cmu.edu/last_readings_from_all_devices/1368568896000/temp/json", function(data) {
           var classname = $("#api-getspecifictimereadings").attr('class');
           if (classname.search("failed-api-test") !== -1) {
             $("#api-getspecifictimereadings").toggleClass("failed-api-test");
@@ -233,7 +233,7 @@ sn_visualization.main = (function(){
           }
         });
 
-        $.getJSON("http://cmu-sensor-network.herokuapp.com/lastest_readings_from_all_devices/temp/json", function(data) {
+        $.getJSON("http://einstein.sv.cmu.edu/lastest_readings_from_all_devices/temp/json", function(data) {
           var classname = $("#api-getcurrenttimereadings").attr('class');
           if (classname.search("failed-api-test") !== -1) {
             $("#api-getcurrenttimereadings").toggleClass("failed-api-test");

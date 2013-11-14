@@ -49,7 +49,7 @@
       var color = d3.scale.category10();
 
       $(document).on("ready", function() {
-        $.getJSON("http://cmu-sensor-network.herokuapp.com/sensors/DCTN102T/1366082066000/1366289320000/temperature/json", function(data) {
+        $.getJSON("http://einstein.sv.cmu.edu/sensors/DCTN102T/1366082066000/1366289320000/temperature/json", function(data) {
           /* d3.entries returns a list of entries from data[0]/first row in JSON data. Filter through entires
           via function(key, val) pairs - keys:  timestamp, sensor_type, value, device_id, vals: 28934987, etc.
           The filter function tests each element in the array of entries with its code - each obj is a separate entry.
