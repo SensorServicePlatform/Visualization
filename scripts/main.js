@@ -191,7 +191,7 @@ sn_visualization.main = (function(){
           }
         });
 
-        $.getJSON("http://einstein.sv.cmu.edu/sensors/10170102/1368568896000/temp/json", function(data) {
+        $.getJSON("http://einstein.sv.cmu.edu/sensors/17010002/1386168297000/temp/json", function(data) {
           var classname = $("#api-getsensorreadingsattime").attr('class');
           if (classname.search("failed-api-test") !== -1) {
             $("#api-getsensorreadingsattime").toggleClass("failed-api-test");
@@ -205,7 +205,7 @@ sn_visualization.main = (function(){
           }
         });
 
-        $.getJSON("http://einstein.sv.cmu.edu/sensors/10170102/1368568896000/1368568996000/temp/json", function(data) {
+        $.getJSON("http://einstein.sv.cmu.edu/sensors/17010002/1386168297000/1386168397000/temp/json", function(data) {
           var classname = $("#api-getsensorreadingstimerange").attr('class');
           if (classname.search("failed-api-test") !== -1) {
             $("#api-getsensorreadingstimerange").toggleClass("failed-api-test");
@@ -219,7 +219,7 @@ sn_visualization.main = (function(){
           }
         });
 
-        $.getJSON("http://einstein.sv.cmu.edu/last_readings_from_all_devices/1368568896000/temp/json", function(data) {
+        $.getJSON("http://einstein.sv.cmu.edu/last_readings_from_all_devices/1386168297000/temp/json", function(data) {
           var classname = $("#api-getspecifictimereadings").attr('class');
           if (classname.search("failed-api-test") !== -1) {
             $("#api-getspecifictimereadings").toggleClass("failed-api-test");
