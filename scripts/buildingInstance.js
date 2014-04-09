@@ -143,18 +143,20 @@ sn_visualization.buildingInstance.prototype = {
     }
   },
   updateDeviceStatus : function(data){
+    console.log(data);
 
     var now = new Date();
 
     for(var i=0; i<data.length; ++i){
       var
         offset = now.getTime()-data[i].timestamp,
-        targetBlock = $('.floorNode[data-d_uri="'+data[i].device_id+'"] .nodeBlock');
+        targetBlock = $('.floorNode[data-d_uri="'+data[i].sensorName+'"] .nodeBlock');
 
       targetBlock.removeClass('badBlock avgBlock goodBlock');
-      if(offset > 3*60*1000){ targetBlock.addClass('badBlock'); }
-      else if(offset > 15*1000){ targetBlock.addClass('avgBlock'); }
-      else { targetBlock.addClass('goodBlock'); }
+      targetBlock.addClass('goodBlock');
+      //if(offset > 3*60*1000){ targetBlock.addClass('badBlock'); }
+      //else if(offset > 15*1000){ targetBlock.addClass('avgBlock'); }
+      //else { targetBlock.addClass('goodBlock'); }
     }
 
   }

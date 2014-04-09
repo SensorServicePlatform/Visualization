@@ -39,7 +39,7 @@ sn_visualization.prestoredData = {
             '17030007' : { print_name : "Sensor Andrew 122", geo : [37.410437,-122.060030, 0] },
             '17030006' : { print_name : "Sensor Andrew 124", geo : [37.410431,-122.060030, 0] },
             '17030005' : { print_name : "Sensor Andrew 126", geo : [37.410425,-122.060030, 0] },
-            '17010003' : { print_name : "Sensor Andrew 129", geo : [37.410400,-122.059750, 0] },
+            'fireImpDigitalTemperature23420ca4e4830bee' : { print_name : "Sensor Andrew 129", geo : [37.410400,-122.059750, 0] },
             '17010002' : { print_name : "Sensor Andrew 129A", geo : [37.410415,-122.059630, 0] },
             '23-03' : { print_name : "Jeenet 213", geo : [37.410460,-122.060090, 1] },
             '23-05' : { print_name : "Jeenet 214", geo : [37.4104695,-122.060006, 1] },

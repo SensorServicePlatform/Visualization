@@ -29,7 +29,8 @@ sn_visualization.main = (function(){
       );
       statusWorker.postMessage({
         type: "START",
-        url: "http://"+sn_visualization.serverAddress+"/last_readings_from_all_devices/",
+        //url: "http://"+sn_visualization.serverAddress+"/last_readings_from_all_devices/",
+        url: 'http://einstein.sv.cmu.edu:9000/getLatestReadingsFromAllDevices/fireImpDigitalTemperature/json'
       });
     };
 
@@ -148,106 +149,106 @@ sn_visualization.main = (function(){
       /* Dynamic API querying
        * if a query fails, toggle only if successful style is up
        * if a query succeeds, toggle only if failure style is up */
-      window.setInterval(function(){
-        $.getJSON("http://einstein.sv.cmu.edu/get_devices/json", function(data) {
-          var classname = $("#api-getalldevices").attr('class');
-          if (classname.search("failed-api-test") !== -1) {
-            $("#api-getalldevices").toggleClass("failed-api-test");
-          }
-        })
-        //start chaining off getJSON()
-        .fail(function() {
-          var classname = $("#api-getalldevices").attr('class');
-          if (classname.search("failed-api-test") === -1) {
-            $("#api-getalldevices").toggleClass("failed-api-test");
-          }
-        });
+      //window.setInterval(function(){
+        //$.getJSON("http://einstein.sv.cmu.edu/get_devices/json", function(data) {
+          //var classname = $("#api-getalldevices").attr('class');
+          //if (classname.search("failed-api-test") !== -1) {
+            //$("#api-getalldevices").toggleClass("failed-api-test");
+          //}
+        //})
+        ////start chaining off getJSON()
+        //.fail(function() {
+          //var classname = $("#api-getalldevices").attr('class');
+          //if (classname.search("failed-api-test") === -1) {
+            //$("#api-getalldevices").toggleClass("failed-api-test");
+          //}
+        //});
 
-        $.getJSON("http://einstein.sv.cmu.edu/get_sensor_types/firefly_v3/json", function(data) {
-          var classname = $("#api-getsensortype").attr('class');
-          if (classname.search("failed-api-test") !== -1) {
-            $("#api-getsensortype").toggleClass("failed-api-test");
-          }
-        })
-        //start chaining off getJSON()
-        .fail(function() {
-          var classname = $("#api-getsensortype").attr('class');
-          if (classname.search("failed-api-test") === -1) {
-            $("#api-getsensortype").toggleClass("failed-api-test");
-          }
-        });
+        //$.getJSON("http://einstein.sv.cmu.edu/get_sensor_types/firefly_v3/json", function(data) {
+          //var classname = $("#api-getsensortype").attr('class');
+          //if (classname.search("failed-api-test") !== -1) {
+            //$("#api-getsensortype").toggleClass("failed-api-test");
+          //}
+        //})
+        ////start chaining off getJSON()
+        //.fail(function() {
+          //var classname = $("#api-getsensortype").attr('class');
+          //if (classname.search("failed-api-test") === -1) {
+            //$("#api-getsensortype").toggleClass("failed-api-test");
+          //}
+        //});
 
-        $.getJSON("", function(data) {
-          var classname = $("#api-addsensorreadings").attr('class');
-          if (classname.search("failed-api-test") !== -1) {
-            $("#api-addsensorreadings").toggleClass("failed-api-test");
-          }
-        })
-        //start chaining off getJSON()
-        .fail(function() {
-          var classname = $("#api-addsensorreadings").attr('class');
-          if (classname.search("failed-api-test") === -1) {
-            $("#api-addsensorreadings").toggleClass("failed-api-test");
-          }
-        });
+        //$.getJSON("", function(data) {
+          //var classname = $("#api-addsensorreadings").attr('class');
+          //if (classname.search("failed-api-test") !== -1) {
+            //$("#api-addsensorreadings").toggleClass("failed-api-test");
+          //}
+        //})
+        ////start chaining off getJSON()
+        //.fail(function() {
+          //var classname = $("#api-addsensorreadings").attr('class');
+          //if (classname.search("failed-api-test") === -1) {
+            //$("#api-addsensorreadings").toggleClass("failed-api-test");
+          //}
+        //});
 
-        $.getJSON("http://einstein.sv.cmu.edu/sensors/17010002/1386168297000/temp/json", function(data) {
-          var classname = $("#api-getsensorreadingsattime").attr('class');
-          if (classname.search("failed-api-test") !== -1) {
-            $("#api-getsensorreadingsattime").toggleClass("failed-api-test");
-          }
-        })
-        //start chaining off getJSON()
-        .fail(function() {
-          var classname = $("#api-getsensorreadingsattime").attr('class');
-          if (classname.search("failed-api-test") === -1) {
-            $("#api-getsensorreadingsattime").toggleClass("failed-api-test");
-          }
-        });
+        //$.getJSON("http://einstein.sv.cmu.edu/sensors/17010002/1386168297000/temp/json", function(data) {
+          //var classname = $("#api-getsensorreadingsattime").attr('class');
+          //if (classname.search("failed-api-test") !== -1) {
+            //$("#api-getsensorreadingsattime").toggleClass("failed-api-test");
+          //}
+        //})
+        ////start chaining off getJSON()
+        //.fail(function() {
+          //var classname = $("#api-getsensorreadingsattime").attr('class');
+          //if (classname.search("failed-api-test") === -1) {
+            //$("#api-getsensorreadingsattime").toggleClass("failed-api-test");
+          //}
+        //});
 
-        $.getJSON("http://einstein.sv.cmu.edu/sensors/17010002/1386168297000/1386168397000/temp/json", function(data) {
-          var classname = $("#api-getsensorreadingstimerange").attr('class');
-          if (classname.search("failed-api-test") !== -1) {
-            $("#api-getsensorreadingstimerange").toggleClass("failed-api-test");
-          }
-        })
-        //start chaining off getJSON()
-        .fail(function() {
-          var classname = $("#api-getsensorreadingstimerange").attr('class');
-          if (classname.search("failed-api-test") === -1) {
-            $("#api-getsensorreadingstimerange").toggleClass("failed-api-test");
-          }
-        });
+        //$.getJSON("http://einstein.sv.cmu.edu/sensors/17010002/1386168297000/1386168397000/temp/json", function(data) {
+          //var classname = $("#api-getsensorreadingstimerange").attr('class');
+          //if (classname.search("failed-api-test") !== -1) {
+            //$("#api-getsensorreadingstimerange").toggleClass("failed-api-test");
+          //}
+        //})
+        ////start chaining off getJSON()
+        //.fail(function() {
+          //var classname = $("#api-getsensorreadingstimerange").attr('class');
+          //if (classname.search("failed-api-test") === -1) {
+            //$("#api-getsensorreadingstimerange").toggleClass("failed-api-test");
+          //}
+        //});
 
-        $.getJSON("http://einstein.sv.cmu.edu/last_readings_from_all_devices/1386168297000/temp/json", function(data) {
-          var classname = $("#api-getspecifictimereadings").attr('class');
-          if (classname.search("failed-api-test") !== -1) {
-            $("#api-getspecifictimereadings").toggleClass("failed-api-test");
-          }
-        })
-        //start chaining off getJSON()
-        .fail(function() {
-          var classname = $("#api-getspecifictimereadings").attr('class');
-          if (classname.search("failed-api-test") === -1) {
-            $("#api-getspecifictimereadings").toggleClass("failed-api-test");
-          }
-        });
+        //$.getJSON("http://einstein.sv.cmu.edu/last_readings_from_all_devices/1386168297000/temp/json", function(data) {
+          //var classname = $("#api-getspecifictimereadings").attr('class');
+          //if (classname.search("failed-api-test") !== -1) {
+            //$("#api-getspecifictimereadings").toggleClass("failed-api-test");
+          //}
+        //})
+        ////start chaining off getJSON()
+        //.fail(function() {
+          //var classname = $("#api-getspecifictimereadings").attr('class');
+          //if (classname.search("failed-api-test") === -1) {
+            //$("#api-getspecifictimereadings").toggleClass("failed-api-test");
+          //}
+        //});
 
-        $.getJSON("http://einstein.sv.cmu.edu/lastest_readings_from_all_devices/temp/json", function(data) {
-          var classname = $("#api-getcurrenttimereadings").attr('class');
-          if (classname.search("failed-api-test") !== -1) {
-            $("#api-getcurrenttimereadings").toggleClass("failed-api-test");
-          }
-        })
-        //start chaining off getJSON()
-        .fail(function() {
-          var classname = $("#api-getcurrenttimereadings").attr('class');
-          if (classname.search("failed-api-test") === -1) {
-            $("#api-getcurrenttimereadings").toggleClass("failed-api-test");
-          }
-        });
+        //$.getJSON("http://einstein.sv.cmu.edu/lastest_readings_from_all_devices/temp/json", function(data) {
+          //var classname = $("#api-getcurrenttimereadings").attr('class');
+          //if (classname.search("failed-api-test") !== -1) {
+            //$("#api-getcurrenttimereadings").toggleClass("failed-api-test");
+          //}
+        //})
+        ////start chaining off getJSON()
+        //.fail(function() {
+          //var classname = $("#api-getcurrenttimereadings").attr('class');
+          //if (classname.search("failed-api-test") === -1) {
+            //$("#api-getcurrenttimereadings").toggleClass("failed-api-test");
+          //}
+        //});
 
-      }, 4000); //call function every /1000 seconds
+      //}, 4000); //call function every /1000 seconds
 
     }
   };
